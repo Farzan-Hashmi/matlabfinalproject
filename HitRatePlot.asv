@@ -1,0 +1,16 @@
+function HitRatePlot(white_black_hit_rates, white_hispanic_hit_rates)
+%This function plots 2 bubble charts for the white_black_hit_rates
+%and white_hispanic_hit_rates output from HitRate.m
+
+bubblechart(white_black_hit_rates.("white_hit_rate"), white_black_hit_rates.("black_hit_rate"), white_black_hit_rates.searches_in_district)
+bubblesize([5 20])
+set(gca,'xtick',linspace(0,1,11),'ytick',linspace(0,1,11))
+xlabel('White Hit Rate')
+ylabel('Black Hit Rate')
+bubblelegend('Number of searches','Location','eastoutside')
+hold on
+plot([0 1], [0,1])
+axis square
+hold off
+
+
